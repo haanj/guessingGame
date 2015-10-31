@@ -45,12 +45,12 @@ function answerErrorCorrect(ans) {
 
 
 var userName = prompt("Hello, what is your name?", "Type your name here");
+
 if (userName === "Rick" || userName === "rick") {
   alert("Alright! Let's get schwifty!")
 } else {
 alert("Hello " + userName + ", are you ready to play a game? How well do you know me?");
 }
-
 
 
 //This for loop runs through the questionArray, checking user's input against the answer
