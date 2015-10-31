@@ -4,8 +4,8 @@ var correctCount = 0
 //questionArray stores Q/A sets.
 var questionArray = [
 //['question', 'yes/no (lowercase)', 'response to user's answer']
-  ["Do I have a PS4?", "no", "I do not have a PS4."],
-  ["Do I like to play ski?", "yes", "I do like to ski. I hope the season's better this year."],
+  ["Do I live in Seattle?", "no", "I live out in Fall City."],
+  ["Do I like to ski?", "yes", "I do like to ski. I hope the season's better this year."],
   ["Am I good at disc golf?", "no", "I like to play, but I'm absolutely terrible at it."],
   ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's probably one of my favorites."]
   //Add more questions here, if desired.
