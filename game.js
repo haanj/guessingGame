@@ -1,13 +1,14 @@
 //correctCount keeps track of how many answers the user gets correct
 var correctCount = 0
 
-//questionArray stores pairs of questions and answers. Any number of Q/A pairs can be added/removed from here without breaking the script. For best results, keep the answers lowercase
+//questionArray stores Q/A sets.
 var questionArray = [
-  ["Do I have a PS4?", "no"],
-  ["Do I like to play disc golf?", "yes"],
-  ["Am I good at disc golf?", "no"],
-  ["Do I enjoy playing Eldritch Horror?", "yes"]
-  //Add more questions in ['question', 'yes/no'] format here
+//['question', 'yes/no (lowercase)', 'response to user's answer']
+  ["Do I have a PS4?", "no", "I do not have a PS4."],
+  ["Do I like to play ski?", "yes", "I do like to ski, even though I haven't gone in a couple years. I hope the season's better this year."],
+  ["Am I good at disc golf?", "no", "I like to play, but I'm absolutely terrible at disc golf."],
+  ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's one of my favorite games that I own."]
+  //Add more questions here, if desired.
 ]
 
 
@@ -53,12 +54,12 @@ alert("Hello " + userName + ", are you ready to play a game? How well do you kno
 //This for loop runs through the questionArray, checking user's input against the answer
 for(i=0; i<questionArray.length; i++) {
   var answer = prompt(questionArray[i][0], "yes/no");
-  answer = answerErrorCorrect(answer);
+  answer = answerErrorCorrect(answer); //runs answer through basic error correction function
   if (answer === questionArray[i][1]){
-    alert("Correct!");
+    alert("Correct! " + questionArray[i][2]);
     correctCount++;
   } else {
-    alert("I'm sorry, the correct answer was " + questionArray[i][1] + ".");
+    alert("I'm sorry " + userName + ", that's incorrect. " + questionArray[i][2] + ".");
   }
 }
 
@@ -76,3 +77,8 @@ if (correctCount === 0) {
   alert("Not bad");
 }
 
+
+//bonus work.
+var numberGuess = prompt("Bonus round! I'm thinking of a number between 1 and 10. Can you guess what it is?", "Enter your guess here. Numeric answers only, please.");
+
+var
