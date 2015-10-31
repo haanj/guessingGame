@@ -5,9 +5,9 @@ var correctCount = 0
 var questionArray = [
 //['question', 'yes/no (lowercase)', 'response to user's answer']
   ["Do I have a PS4?", "no", "I do not have a PS4."],
-  ["Do I like to play ski?", "yes", "I do like to ski, even though I haven't gone in a couple years. I hope the season's better this year."],
-  ["Am I good at disc golf?", "no", "I like to play, but I'm absolutely terrible at disc golf."],
-  ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's one of my favorite games that I own."]
+  ["Do I like to play ski?", "yes", "I do like to ski. I hope the season's better this year."],
+  ["Am I good at disc golf?", "no", "I like to play, but I'm absolutely terrible at it."],
+  ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's probably one of my favorites."]
   //Add more questions here, if desired.
 ]
 
@@ -45,9 +45,11 @@ function answerErrorCorrect(ans) {
 
 
 var userName = prompt("Hello, what is your name?", "Type your name here");
-
+if (userName === "Rick" || userName === "rick") {
+  alert("Alright! Let's get schwifty!")
+} else {
 alert("Hello " + userName + ", are you ready to play a game? How well do you know me?");
-
+}
 
 
 
@@ -73,12 +75,23 @@ if (correctCount === 0) {
   alert("I can't believe you didn't get a single question right! I'm disappointed in you.");
 } else if (correctCount === questionArray.length) {
   alert("You got all the questions correct! Incredible!");
-} else {
-  alert("Not bad");
 }
 
-
 //bonus work.
-var numberGuess = prompt("Bonus round! I'm thinking of a number between 1 and 10. Can you guess what it is?", "Enter your guess here. Numeric answers only, please.");
+var randomNumber = Math.floor(Math.random() * 10) + 1;
+var numberGuess = parseInt(prompt("Bonus round: I'm thinking of a number between 1 and 10. Can you guess what it is?", "Enter your guess here. Numeric answers only, please."));
 
-var
+while (numberGuess !== randomNumber) {
+  if (numberGuess < randomNumber) {
+    numberGuess = parseInt(prompt("That's too low. Guess again!"));
+
+  } else if (numberGuess > randomNumber) {
+    numberGuess = parseInt(prompt("That's too high. Guess again!"));
+
+  } else {
+    numberGuess = parseInt(prompt("That's not even a number! Try again."));
+  }
+}
+alert("Correct! Wow, " + userName + ", you're a great guesser!");
+
+
