@@ -1,5 +1,4 @@
 var userName;
-var userGuess;
 var userAnswer;
 var correctCount = 0;
 var questionArray = [
@@ -63,8 +62,7 @@ function numberGuess(userNumber, ansNumber) {
   alert("Correct! Wow, " + userName + ", you're a great guesser!");
 }
 
-//////PROGRAM START//////
-//trivia
+//////SCRIPT START//////
 userName = prompt("Hello, what is your name?", "Type your name here");
 alert("Hello " + userName + ", are you ready to play a game? How well do you know me?");
 
