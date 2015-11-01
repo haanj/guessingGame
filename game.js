@@ -1,5 +1,6 @@
 var userName;
-var randomNumber = Math.floor(Math.random() * 10) + 1;
+var userGuess;
+var userAnswer;
 var correctCount = 0;
 var questionArray = [
   ["Do I live in Seattle?", "no", "I live out in Fall City."],
@@ -10,12 +11,22 @@ var questionArray = [
 
 //prompts with question, checks user's input against answer, responds accordingly
 function functionGame(question, answer, response) {
-  var userAnswer = answerErrorCorrect(prompt(question, "yes/no"));
+  userAnswer = answerErrorCorrect(prompt(question, "yes/no"));
   if (userAnswer === answer){
     alert("Correct! " + response);
     correctCount++
   } else {
     alert("I'm sorry " + userName + ", that's incorrect. " + response + ".");
+  }
+}
+
+//announces user's score
+function score() {
+  alert("Okay, " + userName + ", it looks like you've gotten " + correctCount + " answer(s) right out of " + questionArray.length + ".");
+  if (correctCount === 0) {
+    alert("I can't believe you didn't get a single question right! I'm disappointed in you.");
+  } else if (correctCount === questionArray.length) {
+    alert("You got all the questions correct! Incredible!");
   }
 }
 
@@ -33,43 +44,38 @@ function answerErrorCorrect(ans) {
   }
 }
 
+//number guessing game
+function numberGuess(userNumber, ansNumber) {
+  while (userNumber !== ansNumber) {
+    if (userNumber < ansNumber) {
+      userNumber = parseInt(prompt("That's too low. Guess again!"));
+    } else if (userNumber > ansNumber) {
+      userNumber = parseInt(prompt("That's too high. Guess again!"));
+    } else {
+      userNumber = parseInt(prompt("That's not even a number! Try again."));
+    }
+  }
+  alert("Correct! Wow, " + userName + ", you're a great guesser!");
+}
 
+//////PROGRAM START//////
+//trivia
 userName = prompt("Hello, what is your name?", "Type your name here");
 alert("Hello " + userName + ", are you ready to play a game? How well do you know me?");
-
 
 for(i=0; i<questionArray.length; i++) {
   functionGame(questionArray[i][0], questionArray[i][1], questionArray[i][2])
 }
+score();
+
+//number guessing game
+userAnswer = parseInt(prompt("Bonus round: I'm thinking of a number between 1 and 10. Can you guess what it is?", "Numeric answers only, please."));
+numberGuess(userAnswer, (Math.floor(Math.random() * 10) + 1));
+
+userAnswer = parseInt(prompt("Okay, one last question: how old am I?", "Numeric answers only, please."));
+numberGuess(userAnswer, 25);
 
 
-alert("Okay, " + userName + ", it looks like you've gotten " + correctCount + " answer(s) right out of " + questionArray.length + ".");
-
-
-if (correctCount === 0) {
-  alert("I can't believe you didn't get a single question right! I'm disappointed in you.");
-} else if (correctCount === questionArray.length) {
-  alert("You got all the questions correct! Incredible!");
-}
-
-
-
-//bonus work.
-
-var numberGuess = parseInt(prompt("Bonus round: I'm thinking of a number between 1 and 10. Can you guess what it is?", "Enter your guess here. Numeric answers only, please."));
-
-while (numberGuess !== randomNumber) {
-  if (numberGuess < randomNumber) {
-    numberGuess = parseInt(prompt("That's too low. Guess again!"));
-
-  } else if (numberGuess > randomNumber) {
-    numberGuess = parseInt(prompt("That's too high. Guess again!"));
-
-  } else {
-    numberGuess = parseInt(prompt("That's not even a number! Try again."));
-  }
-}
-alert("Correct! Wow, " + userName + ", you're a great guesser!");
 
 
 
