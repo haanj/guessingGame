@@ -8,6 +8,11 @@ var questionArray = [
   ["Am I good at disc golf?", "no", "I like to play, but I'm absolutely terrible at it."],
   ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's probably one of my favorites."]
 ];
+var numberGuessArray = [
+  ["I'm thinking of a number between 1 and 10. Can you guess what it is?", (Math.floor(Math.random() * 10) + 1)],
+  ["How old am I?", 25],
+  ["Now many siblings do I have?", 2]
+];
 
 //prompts with question, checks user's input against answer, responds accordingly
 function functionGame(question, answer, response) {
@@ -68,12 +73,10 @@ for(i=0; i<questionArray.length; i++) {
 }
 score();
 
-//number guessing game
-userAnswer = parseInt(prompt("Bonus round: I'm thinking of a number between 1 and 10. Can you guess what it is?", "Numeric answers only, please."));
-numberGuess(userAnswer, (Math.floor(Math.random() * 10) + 1));
-
-userAnswer = parseInt(prompt("Okay, one last question: how old am I?", "Numeric answers only, please."));
-numberGuess(userAnswer, 25);
+for(i=0; i<numberGuessArray.length; i++) {
+  userAnswer = parseInt(prompt(numberGuessArray[i][0]));
+  numberGuess(userAnswer, numberGuessArray[i][1]);
+}
 
 
 
