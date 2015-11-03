@@ -4,15 +4,12 @@ var correctCount = 0;
 var questionArray = [
   ["Do I live in Seattle?", "no", "I live out in Fall City."],
   ["Do I like to ski?", "yes", "I do like to ski. I hope the season's better this year."],
-  ["Am I good at disc golf?", "no", "I like to play, but I'm absolutely terrible at it."],
   ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's probably one of my favorites."],
   ["Am I Irish?", "no", "I am not Irish."]
 ];
 var numberGuessArray = [
   ["I'm thinking of a number between 1 and 10. Can you guess what it is?", (Math.floor(Math.random() * 10) + 1)],
   ["How old am I?", 25],
-  ["Now many siblings do I have?", 2],
-  ["I'm thinking of a number between 1 and 3. What is it?", (Math.floor(Math.random() * 3) + 1)]
 ];
 
 //prompts with question, checks user's input against answer, responds accordingly
