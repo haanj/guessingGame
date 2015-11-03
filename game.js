@@ -11,7 +11,8 @@ var questionArray = [
 var numberGuessArray = [
   ["I'm thinking of a number between 1 and 10. Can you guess what it is?", (Math.floor(Math.random() * 10) + 1)],
   ["How old am I?", 25],
-  ["Now many siblings do I have?", 2]
+  ["Now many siblings do I have?", 2],
+  ["I'm thinking of a number between 1 and 3. What is it?", (Math.floor(Math.random() * 3) + 1)]
 ];
 
 //prompts with question, checks user's input against answer, responds accordingly
