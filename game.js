@@ -5,7 +5,7 @@ var questionArray = [
   ["Do I live in Seattle?", "no", "I live out in Fall City."],
   ["Do I like to ski?", "yes", "I do like to ski. I hope the season's better this year."],
   ["Do I enjoy playing Eldritch Horror?", "yes", "I do enjoy Eldritch Horror; it's probably one of my favorites."],
-  ["Am I Irish?", "no", "I am not Irish."]
+  ["", "no", "I am not Irish."]
 ];
 var numberGuessArray = [
   ["I'm thinking of a number between 1 and 10. Can you guess what it is?", (Math.floor(Math.random() * 10) + 1)],

@@ -5,17 +5,15 @@
 
 <body>
   <h1>The Super Guessing Game!</h1>
-    <p>Hi! My name is Joshua. This trivia game is for our first assignment and features questions about me. So good luck!s</p>
-      <h2>How it works</h2>
-        <p>The JavaScript on this page is really simple atm. The script prompts the user for their name and stores it into a variable called userName. The next piece of script alerts the user with a custom message that concatenates userName to the message for a personalized effect.</p>
-        <p>I put all the questions and answers into an array, designing the script so that I could add/remove any number of Q/A sets without breaking the program. </p>
-        <p>A for loop brings the user through each question in questionArray. The user is prompted for each question, and this is stored into a variable, then run through a basic error correction function before being checked against the correct answer.</p>
-        <p>If the user is correct, correctCount increments, and the user is alerted that they were correct. If the user was incorrect, the user is just alerted that they were incorrect.</p>
-        <p>After the script runs through the questionArray, the user is alerted their score, and an if/else statement branch alerts another message depending on their score.</p>
-        <p>The bonus round stores a random number between 1 and 10 into randomNumber. Then the user is prompted to guess, and that guess is stored into the new variable numberGuess. numberGuess is run through parseInt(), which converts it from a string</p>
-        <p>While the user's answer does not equal the random number, the user will be prompted for another guess and told whether their previous guess was too high or too low. When their answer is correct, the loop will break and they'll be congratulated</p>
-        <p>blah blah blah blah blah blah</p>
-
+    <p>This project was designed as part of a Code Fellows assignment. When loaded in a browser, the user will be asked a series of pre-determined questions. First, the user is asked a series of yes/no questions, then scored off their result. Then for the second part, the user is asked to guess different numbers.</p>
+      <h2>Part I</h2>
+        <h3>Do I live in Seattle?</h3>
+        <h3>Do I like to ski?</h3>
+        <h3>Do I enjoy playing Eldritch Horror?</h3>
+        <h3>Am I Irish?</h3>
+      <h2>Part II</h2>
+        <h3>I'm thinking of a number between 1 and 10. Can you guess what it is?</h3>
+        <h3>How old am I?</h3>
   <script src='game.js'>  </script>
 
 </body>
