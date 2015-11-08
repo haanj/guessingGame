@@ -97,8 +97,13 @@ function showImage(selector){
 
   }
 }
-
-
+/*
+//prints to Index
+function printToIndex(header, paragraph) {
+  document.getElementById("question").innerHTML = header;
+  document.getElementById("answer").innerHTML = paragraph;
+}
+*/
 
 //////SCRIPT START//////
 userName = getUserName();
