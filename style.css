@@ -5,3 +5,11 @@
 #incorrectImage {
   display: none;
 }
+
+.correct {
+  color: blue;
+}
+
+.incorrect {
+  color: red;
+}

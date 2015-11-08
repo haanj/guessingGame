@@ -15,13 +15,11 @@ var numberGuessArray = [
 function functionGame(question, answer, response) {
   var userAnswer = answerErrorCorrect(prompt(question, "yes/no"));
   if (userAnswer === answer){
-    document.getElementById("question").innerHTML = question;
-    document.getElementById("answer").innerHTML = ("Correct! " + response);
+    printIndex("correct", question, response);
     showImage("correct");
     correctCount++
   } else {
-    document.getElementById("question").innerHTML = question;
-    document.getElementById("answer").innerHTML = ("I'm sorry " + userName + ", that's incorrect. " + response + ".");
+    printIndex("incorrect", question, response);
     showImage("incorrect");
   }
 }
@@ -97,13 +95,26 @@ function showImage(selector){
 
   }
 }
-/*
-//prints to Index
-function printToIndex(header, paragraph) {
-  document.getElementById("question").innerHTML = header;
-  document.getElementById("answer").innerHTML = paragraph;
+
+function printIndex(correct, question, reply) {
+  switch(correct){
+    case 'correct':
+      document.getElementById("question").innerHTML = question;
+      document.getElementById("question").className = "correct";
+      document.getElementById("answer").innerHTML = ("Correct! " + reply);
+      document.getElementById("answer").className = "correct";
+      break;
+    case 'incorrect':
+      document.getElementById("question").innerHTML = question;
+      document.getElementById("question").className = "incorrect";
+      document.getElementById("answer").innerHTML = ("I'm sorry " + userName + ", that's incorrect. " + reply + ".");
+      document.getElementById("answer").className = "incorrect";
+      break;
+  }
+
+
+
 }
-*/
 
 //////SCRIPT START//////
 userName = getUserName();
@@ -111,12 +122,12 @@ userName = getUserName();
 for(i=0; i<questionArray.length; i++) {
   functionGame(questionArray[i][0], questionArray[i][1], questionArray[i][2])
 }
-score();
+//score();
 
 for(i=0; i<numberGuessArray.length; i++) {
   userAnswer = parseInt(prompt(numberGuessArray[i][0]));
   numberGuess(userAnswer, numberGuessArray[i][1]);
-    document.getElementById("question").innerHTML = (numberGuessArray[i][0]);
+  document.getElementById("question").innerHTML = (numberGuessArray[i][0]);
 }
 
 
