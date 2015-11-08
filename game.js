@@ -30,11 +30,13 @@ function functionGame(question, answer, response) {
 
 //announces user's score
 function score() {
-  alert("Okay, " + userName + ", it looks like you've gotten " + correctCount + " answer(s) right out of " + questionArray.length + ".");
+  document.getElementById("question").innerHTML = ("Okay, " + userName + ", it looks like you've gotten " + correctCount + " answer(s) right out of " + questionArray.length + ".");
   if (correctCount === 0) {
-    alert("I can't believe you didn't get a single question right! I'm disappointed in you.");
+    document.getElementById("answer").innerHTML = ("I can't believe you didn't get a single question right! I'm disappointed in you.");
   } else if (correctCount === questionArray.length) {
-    alert("You got all the questions correct! Incredible!");
+    document.getElementById("answer").innerHTML = ("You got all the questions correct! Incredible!");
+  } else {
+    document.getElementById("answer").innerHTML = ("");
   }
 }
 
@@ -63,7 +65,7 @@ function numberGuess(userNumber, ansNumber) {
       userNumber = parseInt(prompt("That's not even a number! Try again."));
     }
   }
-  document.getElementById("answer").innerHTML = ("Correct! Wow, " + userName + ", you're a great guesser!");
+  document.getElementById("answer").innerHTML = ("Correct! The answer is " + ansNumber + "! Wow, " + userName + ", you're a great guesser!");
 }
 
 //gets user's name
@@ -88,6 +90,7 @@ score();
 for(i=0; i<numberGuessArray.length; i++) {
   userAnswer = parseInt(prompt(numberGuessArray[i][0]));
   numberGuess(userAnswer, numberGuessArray[i][1]);
+    document.getElementById("question").innerHTML = (numberGuessArray[i][0]);
 }
 
 
