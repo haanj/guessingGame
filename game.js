@@ -21,10 +21,12 @@ function functionGame(question, answer, response) {
   if (userAnswer === answer){
     document.getElementById("question").innerHTML = question;
     document.getElementById("answer").innerHTML = ("Correct! " + response);
+    document.getElementById("correctImage").style.display = "block";
     correctCount++
   } else {
     document.getElementById("question").innerHTML = question;
     document.getElementById("answer").innerHTML = ("I'm sorry " + userName + ", that's incorrect. " + response + ".");
+    document.getElementById("correctImage").style.display = "none";
   }
 }
 
@@ -66,6 +68,8 @@ function numberGuess(userNumber, ansNumber) {
     }
   }
   document.getElementById("answer").innerHTML = ("Correct! The answer is " + ansNumber + "! Wow, " + userName + ", you're a great guesser!");
+  document.getElementById("correctImage").style.display = "block";
+
 }
 
 //gets user's name
