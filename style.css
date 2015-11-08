@@ -1,3 +1,7 @@
 #correctImage {
   display: none;
 }
+
+#incorrectImage {
+  display: none;
+}

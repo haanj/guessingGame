@@ -1,6 +1,3 @@
-//document.getElementById(hidingSpace).style.color = "red";
-
-
 var userName;
 var correctCount = 0;
 var questionArray = [
@@ -16,22 +13,22 @@ var numberGuessArray = [
 
 //prompts with question, checks user's input against answer, responds accordingly
 function functionGame(question, answer, response) {
-
   var userAnswer = answerErrorCorrect(prompt(question, "yes/no"));
   if (userAnswer === answer){
     document.getElementById("question").innerHTML = question;
     document.getElementById("answer").innerHTML = ("Correct! " + response);
-    document.getElementById("correctImage").style.display = "block";
+    showImage("correct");
     correctCount++
   } else {
     document.getElementById("question").innerHTML = question;
     document.getElementById("answer").innerHTML = ("I'm sorry " + userName + ", that's incorrect. " + response + ".");
-    document.getElementById("correctImage").style.display = "none";
+    showImage("incorrect");
   }
 }
 
 //announces user's score
 function score() {
+  showImage("none");
   document.getElementById("question").innerHTML = ("Okay, " + userName + ", it looks like you've gotten " + correctCount + " answer(s) right out of " + questionArray.length + ".");
   if (correctCount === 0) {
     document.getElementById("answer").innerHTML = ("I can't believe you didn't get a single question right! I'm disappointed in you.");
@@ -68,8 +65,7 @@ function numberGuess(userNumber, ansNumber) {
     }
   }
   document.getElementById("answer").innerHTML = ("Correct! The answer is " + ansNumber + "! Wow, " + userName + ", you're a great guesser!");
-  document.getElementById("correctImage").style.display = "block";
-
+  showImage("correct");
 }
 
 //gets user's name
@@ -79,7 +75,28 @@ function getUserName() {
   return name;
 }
 
+//displays selected correct/incorrect image
+function showImage(selector){
+  switch(selector){
+    case 'correct':
+      document.getElementById('correctImage').style.display = 'block';
+      document.getElementById('incorrectImage').style.display = 'none';
+      break;
+    case 'incorrect':
+      document.getElementById('correctImage').style.display = 'none';
+      document.getElementById('incorrectImage').style.display = 'block';
+      break;
+    case 'all':
+      document.getElementById('correctImage').style.display = 'block';
+      document.getElementById('incorrectImage').style.display = 'block';
+      break;
+    default:
+      document.getElementById('correctImage').style.display = 'none';
+      document.getElementById('incorrectImage').style.display = 'none';
+      break;
 
+  }
+}
 
 
 
