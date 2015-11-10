@@ -1,3 +1,23 @@
+* {
+  background-color: white;
+  font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Futura,"Trebuchet MS",Arial,sans-serif;
+}
+
+.correct {
+  background-color: #C9F5CF;
+  color: green;
+}
+
+.incorrect {
+  background-color: #F5DFDF;
+  color: red;
+}
+
+.content {
+  background-color: #DFECF5;
+}
+
+
 #correctImage {
   display: none;
 }
@@ -6,10 +26,27 @@
   display: none;
 }
 
-.correct {
-  color: blue;
+#heading {
+  display: block;
+  width: 600px;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
 }
 
-.incorrect {
-  color: red;
+#intro {
+  display: block;
+  width: 600px;
+  margin: auto;
 }
+
+#questionBlock {
+  display: block;
+  width: 600px;
+  margin: auto;
+}
+
+#questionBlock img {
+  margin: auto;
+}
+

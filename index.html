@@ -5,12 +5,14 @@
 </head>
 
 <body>
-  <h1>The Super Guessing Game!</h1>
-    <p>This project was designed as part of a Code Fellows assignment. When loaded in a browser, the user will be asked a series of pre-determined questions. First, the user is asked a series of yes/no questions, then scored off their result. Then for the second part, the user is asked to guess different numbers.</p>
-      <h2 id="question">Are you ready to answer some questions?</h2>
-        <p id="answer">Let's go!</p>
-        <img id="correctImage" src='correct.jpg'>
-        <img id="incorrectImage" src='incorrect.jpg'>
+  <h1 id="heading" class="content">The Super Guessing Game!</h1>
+  <p id="intro" class="content">This project was designed as part of a Code Fellows assignment. When loaded in a browser, the user will be asked a series of pre-determined questions. First, the user is asked a series of yes/no questions, then scored off their result. Then for the second part, the user is asked to guess different numbers.</p>
+  <div id="questionBlock">
+    <h2 id="question" class="content">Are you ready to answer some questions?</h2>
+    <p id="answer" class="content">Let's go!</p>
+    <img id="correctImage" src='correct.jpg'>
+    <img id="incorrectImage" src='incorrect.jpg'>
+  </div>
   <script src='game.js'>  </script>
 
 </body>
