@@ -16,11 +16,9 @@ function functionGame(question, answer, response) {
   var userAnswer = answerErrorCorrect(prompt(question, "yes/no"));
   if (userAnswer === answer){
     printIndex("correct", question, response);
-    showImage("correct");
     correctCount++
   } else {
     printIndex("incorrect", question, response);
-    showImage("incorrect");
   }
 }
 
@@ -35,6 +33,9 @@ function score() {
   } else {
     document.getElementById("answer").innerHTML = ("");
   }
+  document.getElementById("question").className = "content";
+  document.getElementById("question").className = "content";
+
 }
 
 //answerErrorCorrect will standardize user's yes/no answer
@@ -52,18 +53,25 @@ function answerErrorCorrect(ans) {
 }
 
 //number guessing game
-function numberGuess(userNumber, ansNumber) {
+function numberGuess(question, userNumber, ansNumber) {
+  var response;
   while (userNumber !== ansNumber) {
     if (userNumber < ansNumber) {
-      userNumber = parseInt(prompt("That's too low. Guess again!"));
-    } else if (userNumber > ansNumber) {
-      userNumber = parseInt(prompt("That's too high. Guess again!"));
-    } else {
-      userNumber = parseInt(prompt("That's not even a number! Try again."));
+      response = "I'm sorry, " + userNumber + " is too low. Guess again!"
+      printIndex("incorrect", question, response)
+      userNumber = parseInt(prompt(response));
+    }
+      else if (userNumber > ansNumber) {
+      response = "I'm sorry, " + userNumber + " is too high. Guess again!"
+      printIndex("incorrect", question, response)
+      userNumber = parseInt(prompt(response));
+    }
+      else {
+      response = "I'm sorry, " + userNumber + " is not even a number! Guess again!"
+      printIndex("incorrect", question, response)
+      userNumber = parseInt(prompt(response));
     }
   }
-  document.getElementById("answer").innerHTML = ("Correct! The answer is " + ansNumber + "! Wow, " + userName + ", you're a great guesser!");
-  showImage("correct");
 }
 
 //gets user's name
@@ -104,12 +112,14 @@ function printIndex(style, question, reply) {
       document.getElementById("question").className = "correct";
       document.getElementById("answer").innerHTML = ("Correct! " + reply);
       document.getElementById("answer").className = "correct";
+      showImage("correct");
       break;
     case 'incorrect':
       document.getElementById("question").innerHTML = question;
       document.getElementById("question").className = "incorrect";
       document.getElementById("answer").innerHTML = ("I'm sorry " + userName + ", that's incorrect. " + reply + ".");
       document.getElementById("answer").className = "incorrect";
+      showImage("incorrect");
       break;
   }
 
@@ -123,12 +133,18 @@ userName = getUserName();
 for(i=0; i<questionArray.length; i++) {
   functionGame(questionArray[i][0], questionArray[i][1], questionArray[i][2])
 }
-//score();
+
+score();
 
 for(i=0; i<numberGuessArray.length; i++) {
+  var question = numberGuessArray[i][0];
+  var answerMessage;
+
   userAnswer = parseInt(prompt(numberGuessArray[i][0]));
-  numberGuess(userAnswer, numberGuessArray[i][1]);
-  document.getElementById("question").innerHTML = (numberGuessArray[i][0]);
+  numberGuess(question, userAnswer, numberGuessArray[i][1]);
+
+  answerMessage = ("Correct! The answer is " + numberGuessArray[i][1] + "! Wow, " + userName + ", you're a great guesser!");
+  printIndex("correct", question, answerMessage);
 }
 
 
