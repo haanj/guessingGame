@@ -96,8 +96,9 @@ function showImage(selector){
   }
 }
 
-function printIndex(correct, question, reply) {
-  switch(correct){
+//takes text input and prints to the DOM. "style" changes class to specific style.
+function printIndex(style, question, reply) {
+  switch(style){
     case 'correct':
       document.getElementById("question").innerHTML = question;
       document.getElementById("question").className = "correct";
