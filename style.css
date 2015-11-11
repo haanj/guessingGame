@@ -8,7 +8,17 @@
   color: green;
 }
 
+.correct *{
+  background-color: #C9F5CF;
+  color: green;
+}
+
 .incorrect {
+  background-color: #F5DFDF;
+  color: red;
+}
+
+.incorrect *{
   background-color: #F5DFDF;
   color: red;
 }
@@ -18,6 +28,10 @@
   color: black;
 }
 
+.content * {
+  background-color: #DFECF5;
+  color: black;
+}
 
 #correctImage {
   display: none;
@@ -33,18 +47,24 @@
   font-size: 20px;
   text-align: center;
   margin: auto;
+  padding: 5px;
+
 }
 
 #intro {
   display: block;
   width: 600px;
   margin: auto;
+  padding: 5px;
+
 }
 
 #questionBlock {
   display: block;
   width: 600px;
   margin: auto;
+  padding: 5px;
+
 }
 
 #questionBlock img {

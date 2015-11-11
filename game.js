@@ -33,8 +33,7 @@ function score() {
   } else {
     document.getElementById("answer").innerHTML = ("");
   }
-  document.getElementById("question").className = "content";
-  document.getElementById("question").className = "content";
+  document.getElementById("questionBlock").className = "content";
 
 }
 
@@ -109,16 +108,14 @@ function printIndex(style, question, reply) {
   switch(style){
     case 'correct':
       document.getElementById("question").innerHTML = question;
-      document.getElementById("question").className = "correct";
       document.getElementById("answer").innerHTML = ("Correct! " + reply);
-      document.getElementById("answer").className = "correct";
+      document.getElementById("questionBlock").className = "correct";
       showImage("correct");
       break;
     case 'incorrect':
       document.getElementById("question").innerHTML = question;
-      document.getElementById("question").className = "incorrect";
       document.getElementById("answer").innerHTML = ("I'm sorry " + userName + ", that's incorrect. " + reply + ".");
-      document.getElementById("answer").className = "incorrect";
+      document.getElementById("questionBlock").className = "incorrect";
       showImage("incorrect");
       break;
   }
